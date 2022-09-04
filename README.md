@@ -1,52 +1,59 @@
-# Linear-Regression-Case-Study-Bike-Sharing
-> Outline a brief description of your project.
+<h1> Linear-Regression-Case-Study-Bike-Sharing </h1> 
+Brief description of the project:
 
+- BoomBikes have contacted a consulting company to understand the factors on which the demand for these shared bikes depends. 
+Specifically, they want to understand the factors affecting the demand for these shared bikes in the American market.
 
-## Table of Contents
-* [General Info](#general-information)
-* [Technologies Used](#technologies-used)
-* [Conclusions](#conclusions)
-* [Acknowledgements](#acknowledgements)
+##The company wants to know:
 
-<!-- You can include any other section that is pertinent to your problem -->
+- Which variables are significant in predicting the demand for shared bikes.
+
+- How well those variables describe the bike demands
+
+- Based on various meteorological surveys and people's styles, the service provider firm has gathered a large dataset on daily bike demands across the American market based on some factors.
+
 
 ## General Information
-- Provide general information about your project here.
-- What is the background of your project?
-- What is the business probem that your project is trying to solve?
-- What is the dataset that is being used?
+- We are required to model the demand for shared bikes with the available independent variables. It will be used by the management to understand how exactly the demands vary with different features. 
+- They can accordingly manipulate the business strategy to meet the demand levels and meet the customer's expectations. Further, the model will be a good way for management to understand the demand dynamics of a new market.
 
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
-## Conclusions
-- Conclusion 1 from the analysis
-- Conclusion 2 from the analysis
-- Conclusion 3 from the analysis
-- Conclusion 4 from the analysis
+### Final Conclusions
+##Conclusion from Bike Sharing dataset EDA:
+- Also it is quite clear that atemp is directly derived from temp and hence if atemp is taken into account, temp becomes redundant.
+- The hiring rate is more for 2019 than 2018
+- Fall shows a higher demand followed by summer season
+- May to October period also shows a higher demand than other parts of the year
+- working days are having a higher demand than holidays and weekends
+- Clear weather days attract a hire demand then other days.
+- Temperature is having a positive correlation(0.63) with demand. And higher temp attracts more bike hiring.
+- Windspeed shows somewhat negative correlations(-0.24) with count.
 
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
+##Model Building and Evaluation Conclusion:
+- Final Equation for Prediction :
+const * 0.2530 + yr * 0.2560 + holiday * -0.0544 + windspeed * -0.1670 + season_spring * -0.2023 + season_winter * 0.0350 + mnth_december * -0.1609 + mnth_february * -0.1027 + mnth_january * -0.1464 + mnth_november * -0.1491 + mnth_september * 0.0591 + weathersit_clear * 0.2909 + weathersit_moderate * 0.2008
 
+- r2_score for train data set is 80%
+
+- r2_score for test data set is 77.11%
+
+- we used RFE for automatic feature elimation , after that we removed 'atemp','hum','mnth_july' based on p and VIF values
+
+- based on trained model and our analysis, top three features contributing to shared bikes demand are yr, weather situation, september month.
 
 ## Technologies Used
-- library - version 1.0
-- library - version 2.0
-- library - version 3.0
-
-<!-- As the libraries versions keep on changing, it is recommended to mention the version of library used in this project -->
+- pandas - version 1.2.4
+- numpy - version 1.20.1
+- seaborn - version 0.11.1
+- matplotlib - version 3.3.4
+- scikit-learn - version 1.0.2
+- statsmodels - version 0.13.2
 
 ## Acknowledgements
 Give credit here.
-- This project was inspired by...
-- References if any...
-- This project was based on [this tutorial](https://www.example.com).
+- This project was inspired by Upgrad(IIITB) Linear-Regression-Case-Study-Bike-Sharing assignment.
 
 
 ## Contact
-Created by [@githubusername] - feel free to contact me!
+Created by [@yalagamsrinivas] - feel free to contact us!
 
-
-<!-- Optional -->
-<!-- ## License -->
-<!-- This project is open source and available under the [... License](). -->
-
-<!-- You don't have to include all sections - just the one's relevant to your project -->
